@@ -5,6 +5,7 @@ body {
 
 h1{
 	text-align: center;
+	margin: 0;
 }
 
 h5 {
@@ -17,14 +18,22 @@ h3{
 
 p.where{
 	font-weight: bold;
-	display:inline-block;
+	float: left;
 	text-align: left;
+	margin: 0;
 }
 
 p.when{
-	display:inline-block;
+	float: right;
 	text-align: right;
+	margin: 0;
 }
+
+p.description{
+	font-style: italic;
+	margin: 0:;
+}
+
 img {
 	display: block;
 	margin: auto;
@@ -39,11 +48,8 @@ img {
 a.resume:link, a.resume:visited {
     background-color: #89cff0;
     color: white;
-    padding: 14px 25px;
-    float:left;
-    margin-right:5px; 
+    padding: 14px 25px; 
     text-decoration: none;
-    display: inline-block;
 }
 a.resume:hover {
 	text-align: : center;
@@ -55,13 +61,21 @@ a.bio:link, a.bio:visited {
     background-color: #89cff0;
     color: white;
     padding: 14px 25px;
-    float:right;
-    margin-right:5px; 
     text-decoration: none;
-    display: inline-block;
 }
 
 a.bio:hover {
 	text-align: : center;
     text-decoration: underline;
+}
+/*
+div{
+	display: block;
+	margin: auto;
+	width: 50%;
+}*/
+
+div.relative {
+    position: relative;
+    left: 42%;
 }
