@@ -31,7 +31,7 @@ p.when{
 
 p.description{
 	font-style: italic;
-	margin: 0:;
+	margin: 0;
 }
 
 img {
@@ -52,7 +52,6 @@ a.resume:link, a.resume:visited {
     text-decoration: none;
 }
 a.resume:hover {
-	text-align: : center;
     text-decoration: underline;
 }
 
@@ -65,7 +64,6 @@ a.bio:link, a.bio:visited {
 }
 
 a.bio:hover {
-	text-align: : center;
     text-decoration: underline;
 }
 /*
