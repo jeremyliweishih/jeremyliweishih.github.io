@@ -32,7 +32,6 @@ float origin_x;
 float origin_y;
 
 void draw() {
-  clear();
   background(220,220,220);
   origin_x = width / 2;
   origin_y = height / 2;
@@ -104,7 +103,6 @@ class Pie{
        angle = (-1) * angle; 
     }
     //print("Quad: " + quad);
-    print("Angle: " + angle);
     if(angle >= start_angle && angle <= stop_angle && len <= (width/4)){
        c = color(60, 60 , 60);
        return true;
@@ -140,7 +138,6 @@ class PieChart{
           Pie p = new Pie(start_angle, start_angle + (2 * PI * ratio));
           start_angle += 2 * PI * ratio;
           pies[i] = p;
-          println("P angle: " + p.start_angle);
        }
     }
     
