@@ -1,59 +1,4 @@
 // Lab 3
-
-String [] lines;
-String [] headers;
-String [] departments;
-int [] num_students;
-
-PieChart chart;
-
-void setup() {
-   size(600,600);
-   lines = loadStrings("./data.csv");
-   headers = split(lines[0], ",");
-   departments = new String[lines.length - 1];
-   num_students = new int[lines.length - 1];
-   
-   for(int i = 1; i < lines.length; i++){
-      String[] data = split(lines[i], ",");
-      departments[i - 1] = data[0];
-      num_students[i - 1] = int(data[1]);
-   }
-   //for(int i = 1; i < lines.length; i++){
-   //   print(departments[i - 1] + "\n");
-   //   print(num_students[i - 1] + "\n");
-   //}
-   chart = new PieChart(departments, num_students);
-   chart.populatePies();
-}
-
-
-float origin_x;
-float origin_y;
-
-void draw() {
-  background(220,220,220);
-  origin_x = width / 2;
-  origin_y = height / 2;
-  chart.drawPies();
-  fill(255,255,255);
-  rect(0, 0, 350, 50);
-  
-  fill(0,0,0);
-  text("Department: " + departments[current_index] + ",  Students: " + num_students[current_index], 15, 25);
-}
-int current_index;
-
-void mouseMoved() {
-  for(int i = 0; i < chart.pies.length; i++){
-    //mouseInside
-    if(chart.pies[i].mouseInside()){
-       current_index = i; 
-    }
-  }
-}
-
-
 class Pie{
   float start_angle;
   float stop_angle;
@@ -146,5 +91,57 @@ class PieChart{
          pies[i].drawPie();
       }
     }
-    
+}
+
+String [] lines;
+String [] headers;
+String [] departments;
+int [] num_students;
+
+PieChart chart;
+
+void setup() {
+   size(600,600);
+   lines = loadStrings("./data.csv");
+   headers = split(lines[0], ",");
+   departments = new String[lines.length - 1];
+   num_students = new int[lines.length - 1];
+   
+   for(int i = 1; i < lines.length; i++){
+      String[] data = split(lines[i], ",");
+      departments[i - 1] = data[0];
+      num_students[i - 1] = int(data[1]);
+   }
+   //for(int i = 1; i < lines.length; i++){
+   //   print(departments[i - 1] + "\n");
+   //   print(num_students[i - 1] + "\n");
+   //}
+   chart = new PieChart(departments, num_students);
+   chart.populatePies();
+}
+
+
+float origin_x;
+float origin_y;
+
+void draw() {
+  background(220,220,220);
+  origin_x = width / 2;
+  origin_y = height / 2;
+  chart.drawPies();
+  fill(255,255,255);
+  rect(0, 0, 350, 50);
+  
+  fill(0,0,0);
+  text("Department: " + departments[current_index] + ",  Students: " + num_students[current_index], 15, 25);
+}
+int current_index;
+
+void mouseMoved() {
+  for(int i = 0; i < chart.pies.length; i++){
+    //mouseInside
+    if(chart.pies[i].mouseInside()){
+       current_index = i; 
+    }
+  }
 }
