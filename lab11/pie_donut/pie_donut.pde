@@ -17,9 +17,9 @@ class Pie{
      fill(c);
      ellipseMode(CENTER);
      arc(width/ 2, height /2, width / 2, height /2, start_angle, stop_angle);
-     float x = 300 * cos(stop_angle);
-     float y = 300 * sin(stop_angle);
-     line(width/2, height/2, x, y);
+     float x1 = 150 * cos(stop_angle) + 300;
+     float y1 = 150 * sin(stop_angle) + 300;
+     line(width/2, height/2, x1, y1);
   }
   
   boolean mouseInside(){
