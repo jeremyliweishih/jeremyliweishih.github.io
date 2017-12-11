@@ -16,7 +16,7 @@ class Pie{
   void drawPie(){
      fill(c);
      ellipseMode(CENTER);
-     arc(width/ 2, height /2, width / 2, height /2, start_angle, stop_angle,PIE);
+     arc(width/ 2, height /2, width / 2, height /2, start_angle, stop_angle);
   }
   
   boolean mouseInside(){
